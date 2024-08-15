@@ -84,10 +84,16 @@ body {
   padding: 13px 15px;
   border-radius: 50%;
   outline: none;
+  opacity: 0;  /* Start as invisible */
+  transition: opacity 0.3s ease;  /* Smooth transition */
+}
+
+.slider:hover .buttons button {
+  opacity: 1;  /* Become visible on hover */
 }
 
 .buttons button:hover {
-  background-color: #e5ebf3;
+  background-color: transparent;
   color: #362a2b;
 }
 
@@ -119,11 +125,11 @@ body {
     <div class="slide"></div>
     <div class="slide"></div>
 
-  </div>
   <div class="buttons">
     <button id="prev"><i class="fas fa-arrow-left"></i></button>
     <button id="next"><i class="fas fa-arrow-right"></i></button>
   </div>
+    
   <!-- partial -->
   <script>
     const slides = document.querySelectorAll(".slide");
